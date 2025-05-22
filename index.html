@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Resizer By Arteveliz</h1>
+
+        <div class="upload-section">
+            <div id="dropArea" class="drop-area">
+                <p>Drag & Drop your images here</p>
+                <p>or</p>
+                <label for="imageUpload" class="upload-button">Upload Images</label>
+                <input type="file" id="imageUpload" accept="image/*" multiple>
+            </div>
+            <p id="fileCountDisplay"></p>
+        </div>
+
+        <div class="resize-section">
+            <div class="preset-group">
+                <label for="presetSelect">Select Preset:</label>
+                <select id="presetSelect">
+                    <option value="">Custom</option>
+                    <option value="thumbnail">Thumbnail (80x80px, PNG)</option>
+                    <option value="graphicriver">GraphicRiver (590px width, JPG)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="widthInput">Width:</label>
+                <input type="number" id="widthInput" placeholder="Auto" min="1">
+            </div>
+            <div class="input-group">
+                <label for="heightInput">Height:</label>
+                <input type="number" id="heightInput" placeholder="Auto" min="1">
+            </div>
+            <button id="resizeAllButton">Resize All Images</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Resized Images:</h2>
+            <div id="resizedImagesContainer" class="resized-images-container">
+                <p class="placeholder-text">Upload images to start resizing!</p>
+            </div>
+            <div class="download-options">
+                <label for="formatSelect">Save as:</label>
+                <select id="formatSelect">
+                    <option value="image/png">PNG</option>
+                    <option value="image/jpeg">JPEG</option>
+                    <option value="image/webp">WEBP</option>
+                </select>
+                <button id="downloadAllButton">Download All Resized Images</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

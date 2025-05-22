@@ -1,0 +1,223 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 900px; /* Lebar kontainer lebih besar untuk banyak gambar */
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.upload-section, .resize-section, .output-section {
+    margin-bottom: 25px;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #fdfdfd;
+}
+
+.drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.drop-area.highlight {
+    background-color: #e9e9e9;
+    border-color: #007bff;
+}
+
+.drop-area p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.upload-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px; /* Jarak dari teks "or" */
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+#imageUpload {
+    display: none;
+}
+
+#fileCountDisplay { /* Perubahan ID */
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+
+.input-group {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input[type="number"] {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100px;
+    text-align: center;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Container untuk menampilkan banyak gambar hasil resize */
+.resized-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+    min-height: 100px; /* Agar ada ruang terlihat */
+    border: 1px dashed #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #fdfdfd;
+}
+
+.resized-image-item {
+    text-align: center;
+    border: 1px solid #eee;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.resized-image-item canvas {
+    max-width: 150px; /* Ukuran thumbnail preview */
+    height: auto;
+    display: block;
+    margin: 0 auto 5px auto;
+    border: 1px solid #ddd;
+}
+
+.resized-image-item p {
+    font-size: 0.8em;
+    color: #555;
+    margin: 0;
+    word-break: break-all; /* Agar nama file panjang tidak merusak layout */
+}
+
+.placeholder-text {
+    color: #888;
+    font-style: italic;
+    margin: auto; /* Untuk menempatkan di tengah flex container */
+}
+
+
+.download-options {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.download-options label {
+    color: #555;
+}
+
+#formatSelect {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#downloadAllButton { /* Perubahan ID */
+    background-color: #17a2b8;
+}
+
+#downloadAllButton:hover { /* Perubahan ID */
+    background-color: #138496;
+}
+
+.preset-group {
+    margin-bottom: 15px;
+}
+
+.preset-group label {
+    margin-right: 10px;
+    color: #555;
+}
+
+.preset-group select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .input-group {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .input-group input[type="number"] {
+        width: calc(100% - 24px);
+        max-width: 150px;
+    }
+
+    .download-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .preset-group {
+        margin-bottom: 15px;
+    }
+}
